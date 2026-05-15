@@ -10,3 +10,8 @@ export function seasonName(d) {
     if (d < 266) return 'Verão N / Inverno S';
     return 'Outono N / Primavera S';
 }
+
+export function syncPct(el) {
+    const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+    el.style.setProperty('--pct', pct + '%');
+}
