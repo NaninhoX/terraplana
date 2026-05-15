@@ -2,99 +2,74 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Modelo Cosmológico - Terra Plana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Plana - Simulação</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="loading">
-    <div class="ring"></div>
-    <h2>INICIALIZANDO MODELO</h2>
-</div>
-
-<div id="cv"></div>
-
-<div class="corner tl"></div>
-<div class="corner tr"></div>
-<div class="corner bl"></div>
-<div class="corner br"></div>
-
-<button id="ui-pill"><span class="dot"></span>Interface</button>
-
-<div id="ui">
-    <div id="header">
-        <div id="title">
-            <h1>MODELO COSMOLÓGICO<br>TERRA PLANA</h1>
-            <p>Simulação Interativa · Three.js</p>
-        </div>
-        <div id="status-wrap">
-            <button id="stat-toggle" class="open">Status <i class="chev">▾</i></button>
-            <div id="status-bar">
-                <div class="si"><div class="sl">Hora do Dia</div><div class="sv" id="d-time">00:00</div></div>
-                <div class="si"><div class="sl">Dia do Ano</div><div class="sv" id="d-day">1</div></div>
-                <div class="si"><div class="sl">Estação</div><div class="sv" id="d-season">—</div></div>
-                <div class="si"><div class="sl">Fase Lunar</div><div class="sv" id="d-moon">Lua Nova</div></div>
+    <div id="cv"></div>
+    <div id="loading"><div class="ring"></div><h2>INICIALIZANDO</h2></div>
+    
+    <div class="corner tl"></div><div class="corner tr"></div>
+    <div class="corner bl"></div><div class="corner br"></div>
+    
+    <button id="ui-pill"><span class="dot"></span>Interface</button>
+    
+    <div id="ui">
+        <div id="header">
+            <div id="title">
+                <h1>MODELO COSMOLÓGICO<br>TERRA PLANA</h1>
+                <p>Simulação Interativa · Three.js</p>
             </div>
-        </div>
-    </div>
-
-    <div id="controls">
-        <div class="panel" id="p-solar">
-            <div class="ptitle" data-p="p-solar">⊙ Tempo &amp; Órbitas <i class="chev">▾</i></div>
-            <div class="pbody">
-                <div class="crow">
-                    <div class="clabel">Hora do dia &nbsp;<span id="lbl-h">00:00</span></div>
-                    <input type="range" id="sl-hour" min="0" max="1440" value="0" step="1">
-                </div>
-                <div class="crow">
-                    <div class="clabel">Dia do ano &nbsp;<span id="lbl-y">1</span>/365</div>
-                    <input type="range" id="sl-year" min="1" max="365" value="1" step="1">
-                </div>
-                <div class="crow">
-                    <div class="clabel">Dia lunar &nbsp;<span id="lbl-m">1</span>/28</div>
-                    <input type="range" id="sl-moon" min="1" max="28" value="1" step="1">
-                </div>
-                <div class="crow">
-                    <span class="speed-label">Velocidade:</span>
-                    <div class="speed-buttons">
-                        <button class="sbtn" data-sp="0">⏸</button>
-                        <button class="sbtn" data-sp="60">×1</button>
-                        <button class="sbtn" data-sp="600">×10</button>
-                        <button class="sbtn" data-sp="3600">×60</button>
-                        <button class="sbtn" data-sp="21600">×360</button>
-                        <button class="sbtn on" data-sp="86400">×dia</button>
-                    </div>
+            <div id="status-wrap">
+                <button id="stat-toggle" class="open">Status <i class="chev">▾</i></button>
+                <div id="status-bar">
+                    <div class="si"><div class="sl">Hora do Dia</div><div class="sv" id="d-time">00:00</div></div>
+                    <div class="si"><div class="sl">Dia do Ano</div><div class="sv" id="d-day">1</div></div>
+                    <div class="si"><div class="sl">Estação</div><div class="sv" id="d-season">—</div></div>
+                    <div class="si"><div class="sl">Fase Lunar</div><div class="sv" id="d-moon">Lua Nova</div></div>
                 </div>
             </div>
         </div>
-
-        <div class="panel" id="p-vis">
-            <div class="ptitle" data-p="p-vis">◈ Visibilidade <i class="chev">▾</i></div>
-            <div class="pbody">
-                <div class="tgroup">
+        
+        <div id="controls">
+            <div class="panel" id="p-solar">
+                <div class="ptitle" data-p="p-solar">⊙ Tempo &amp; Órbitas <i class="chev">▾</i></div>
+                <div class="pbody">
+                    <div class="crow"><div class="clabel">Hora do dia &nbsp;<span id="lbl-h">00:00</span></div><input type="range" id="sl-hour" min="0" max="1440" value="720" step="1"></div>
+                    <div class="crow"><div class="clabel">Dia do ano &nbsp;<span id="lbl-y">1</span>/365</div><input type="range" id="sl-year" min="1" max="365" value="1" step="1"></div>
+                    <div class="crow"><div class="clabel">Dia lunar &nbsp;<span id="lbl-m">1</span>/28</div><input type="range" id="sl-moon" min="1" max="28" value="1" step="1"></div>
+                    <div class="crow"><span class="speed-label">Velocidade:</span><div class="speed-buttons">
+                        <button class="sbtn" data-sp="0">⏸</button><button class="sbtn" data-sp="60">×1</button>
+                        <button class="sbtn" data-sp="600">×10</button><button class="sbtn" data-sp="3600">×60</button>
+                        <button class="sbtn" data-sp="21600">×360</button><button class="sbtn on" data-sp="86400">×dia</button>
+                    </div></div>
+                </div>
+            </div>
+            <div class="panel" id="p-vis">
+                <div class="ptitle" data-p="p-vis">◈ Visibilidade <i class="chev">▾</i></div>
+                <div class="pbody"><div class="tgroup">
                     <button class="tbtn on" data-tog="grid">Lat/Long</button>
                     <button class="tbtn on" data-tog="tropics">Trópicos</button>
                     <button class="tbtn on" data-tog="labels">Etiquetas</button>
                     <button class="tbtn on" data-tog="cone">Cone de Luz</button>
                     <button class="tbtn on" data-tog="ice">Muralha</button>
                     <button class="tbtn on" data-tog="stars">Estrelas</button>
-                </div>
+                </div></div>
             </div>
         </div>
     </div>
-</div>
-
-<div id="info">Arraste para orbitar · Scroll para zoom · Modelo fictício educativo</div>
-
-<script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+    
+    <div id="info">Arraste para orbitar · Scroll para zoom · Modelo fictício educativo</div>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
         }
-    }
-</script>
-<script type="module" src="script.js"></script>
+    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
