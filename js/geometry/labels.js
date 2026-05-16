@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { DR, R_CANCER, R_EQUATOR, R_CAPRI, ICE_H } from '../utils/constants.js';
 
 // Helper para roundRect
