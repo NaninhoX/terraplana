@@ -1,5 +1,5 @@
 import { createRenderer } from './core/renderer.js';
-import { createScene, camera } from './core/scene.js';
+import { createScene, createCamera } from './core/scene.js';
 import { createOrbitControls } from './core/controls.js';
 import { setupLighting } from './core/lighting.js';
 import { createDisc } from './objects/disc.js';
@@ -21,6 +21,7 @@ const renderer = createRenderer();
 document.getElementById('cv').appendChild(renderer.domElement);
 
 const scene = createScene();
+const camera = createCamera();
 window.camera = camera; // exportar
 const controls = createOrbitControls(camera, renderer.domElement);
 
