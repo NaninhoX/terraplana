@@ -16,12 +16,40 @@ export const elements = {
     uiDiv: document.getElementById('ui')
 };
 
-export function updateUI(timeMin, dayYear, dayMoon, season, moonPhaseStr, fmtTimeFn) {
-    elements.dTime.textContent = fmtTimeFn(timeMin);
+export function initUI() {
+    // Inicializa sliders com valores padrão
+    syncPct(elements.slHour);
+    syncPct(elements.slYear);
+    syncPct(elements.slMoon);
+}
+
+export function updateUI(timeMin, dayYear, dayMoon) {
+    const h = fmtTime(timeMin);
+    const season = seasonName(dayYear);
+    const phase = moonPhase(dayMoon);
+    
+    elements.dTime.textContent = h;
     elements.dDay.textContent = Math.floor(dayYear);
     elements.dSeason.textContent = season;
-    elements.dMoon.textContent = moonPhaseStr;
-    elements.lblHour.textContent = fmtTimeFn(timeMin);
+    elements.dMoon.textContent = phase;
+    elements.lblHour.textContent = h;
     elements.lblYear.textContent = Math.floor(dayYear);
     elements.lblMoon.textContent = Math.floor(dayMoon);
+}
+
+function fmtTime(tm) {
+    const h = Math.floor(tm / 60) % 24;
+    const m = Math.floor(tm % 60);
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+}
+
+function seasonName(d) {
+    if (d < 80 || d >= 355) return 'Inverno N / Verão S';
+    if (d < 172) return 'Primavera N / Outono S';
+    if (d < 266) return 'Verão N / Inverno S';
+    return 'Outono N / Primavera S';
+}
+
+function syncPct(el) {
+    el.style.setProperty('--pct', ((el.value - el.min) / (el.max - el.min)) * 100 + '%');
 }
