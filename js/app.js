@@ -11,7 +11,7 @@ import { createTropics } from './geometry/tropics.js';
 import { createGrid } from './geometry/grid.js';
 import { createLabels } from './geometry/labels.js';
 import { DR, SUN_H } from './utils/constants.js';
-import { sunRadius, moonRadius, sunAngle, moonAngle } from './utils/orbits.js';
+import { sunRadius, moonRadius, sunAngle, moonAngle, moonPhase } from './utils/orbits.js';
 import { initUI, updateUI } from './ui/elements.js';
 import { initEvents, getTimeState, getAnimSpeed } from './ui/events.js';
 import { startAnimation } from './animation/animate.js';
