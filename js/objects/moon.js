@@ -43,3 +43,8 @@ export function setMoonEclipseColor(moonMesh, isEclipse) {
         moonMesh.material.emissiveIntensity = 0.18;
     }
 }
+
+export function getMoonHeight(moonDay) {
+    const phase = Math.cos(((moonDay - 1) / 28) * Math.PI * 2);
+    return MOON_H_BASE + MOON_H_VARIATION * phase;
+}
