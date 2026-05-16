@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { MOON_H_BASE } from '../utils/constants.js';
 
 export function createMoon(scene) {
