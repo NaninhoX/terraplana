@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 export function createProceduralTexture() {
     const canvasTex = document.createElement('canvas');
     canvasTex.width = 1024;
