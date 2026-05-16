@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 export function setupLighting(scene) {
     // Luz ambiente (baixa para sombras profundas)
     scene.add(new THREE.AmbientLight(0x224455, 0.018));
