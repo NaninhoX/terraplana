@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { AR, DR } from '../utils/constants.js';
 
 export function createGrid(scene) {
