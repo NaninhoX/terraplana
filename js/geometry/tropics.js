@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { R_CANCER, R_EQUATOR, R_CAPRI } from '../utils/constants.js';
 
 export function createTropics(scene) {
