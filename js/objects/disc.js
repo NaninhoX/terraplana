@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { DR } from '../utils/constants.js';
 import { createProceduralTexture } from '../utils/texture.js';
 
