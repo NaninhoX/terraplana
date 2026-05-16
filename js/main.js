@@ -21,7 +21,7 @@ const renderer = createRenderer();
 document.getElementById('cv').appendChild(renderer.domElement);
 
 const scene = createScene();
-const camera = window.camera = camera; // exportar
+window.camera = camera; // exportar
 const controls = createOrbitControls(camera, renderer.domElement);
 
 setupLighting(scene);
