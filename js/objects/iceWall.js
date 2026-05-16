@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { ICE_H, ICE_IR, ICE_OR } from '../utils/constants.js';
 
 export function createIceWall(scene) {
