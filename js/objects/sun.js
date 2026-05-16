@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 import { SUN_H } from '../utils/constants.js';
 
 let sunLight = null;
