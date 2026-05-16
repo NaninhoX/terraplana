@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 export function createStars(scene) {
     const starGroup = new THREE.Group();
     const N = 6000;
